@@ -26,6 +26,21 @@ const char* password = "****";
 
 ## 2. NodeMCU 설정
 
+`\DESIGN\DHT_Sound_Sensor/DHT_Sound_Sensor.ino` 코드에서 보드는 NodeMCU 1.0 (ESP-12E Module)로 설정하고 Arduino에 연결한 Port까지 등록한다.
+
+그리고 사용하는 WiFi의 ssid와 password를 아래 코드에 작성한다.
+
+```c++
+const char *WifiSSID = "****";
+const char *WifiPW = "****";
+```
+
+먼저 아두이노에서 센서 값을 mqtt에 보낼 때 Json 형식으로 보내기 위해 필요한 라이브러리를 다운받아야 한다.
+1. 아두이노 라이브러리 매니저에서 ArduinoJson을 검색한다.
+2. ArduinoJson by Benoit Blanchon의 최신버전을 설치한다.
+
+위와 같이 설정이 끝났다면 컴파일 후 NodeMCU에 업로드한다.
+
 ## 3. HASS 설정
 
   HASS 웹서버를 RPI4에서 가동시킨 뒤, 카메라 스트리밍과 NodeMCU로부터 받는 온습도 데이터를 확인할 수 있도록 설정한다.
